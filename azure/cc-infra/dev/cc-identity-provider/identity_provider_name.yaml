@@ -1,0 +1,33 @@
+#Optional
+#String
+#This is the IaC module version to be used by the pipeline. If not specified, the latest release of IaC will be used.
+pipeline_version: 1.0.0
+
+#Required
+cc_identity_provider:
+  
+  #Required
+  #String
+  #Will be used as the display name
+  name: "My OIDC Provider: Azure Entra"
+
+  #Required
+  #String
+  #SHort description about the provider
+  description: "Description about the provider"
+
+  #Required
+  #String
+  #The unique issuer URI string represents the entity for issuing tokens
+  issuer: "Issuer URI"
+
+  #Required
+  #String
+  #A publicly reachable JSON Web Key Set (JWKS) URI
+  jwks_uri: "jwks URI"
+
+  #Optional
+  #String
+  #The JSON Web Token (JWT) claim to extract the authenticating identity to Confluent resources from
+  #Default value: sub
+  identity_claim: "sub"
